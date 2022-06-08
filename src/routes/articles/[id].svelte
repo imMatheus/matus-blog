@@ -7,4 +7,8 @@
 	.ff {
 		background-color: orange;
 	}
+
+	.dd {
+		@extend .ff;
+	}
 </style>
