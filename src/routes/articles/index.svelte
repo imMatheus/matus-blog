@@ -1,21 +1,19 @@
 <script lang="ts" context="module">
-	export async function load(context: any) {
-		const res = await fetch('https://jsonplaceholder.typicode.com/posts');
-		const posts = await res.json();
+	import type { Load } from '@sveltejs/kit';
+	import fs from 'fs';
+	import path from 'path';
 
-		if (res.ok) {
-			return {
-				props: {
-					posts
-				}
-			};
-		}
+	export const load: Load = async (context) => {
+		const markdown = fs.readFileSync(path.join('../../articles/sql.md'), 'utf8');
+
+		// console.log(__dirname);
+		console.log(markdown);
 
 		return {
-			status: res.status,
+			status: 200,
 			error: new Error('Could not fetch the guides')
 		};
-	}
+	};
 </script>
 
 <script lang="ts">

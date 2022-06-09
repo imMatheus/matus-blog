@@ -10,7 +10,7 @@
 
 <footer>
 	<p>
-		<a href="https://kit.svelte.dev">kit..dev</a>
+		<a href="https://kit.svelte.dev">kitff..dev</a>
 	</p>
 </footer>
 
